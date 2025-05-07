@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://tsw4o8q85mc2"]
+
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_onb6i"]
+[ext_resource type="Texture2D" uid="uid://8bg3obgro5wm" path="res://kenney_top-down-shooter/PNG/Zombie 1/zoimbie1_hold.png" id="1_wybgo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5psar"]
+radius = 26.0
+height = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3kyeg"]
+radius = 264.008
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_onb6i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_wybgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CapsuleShape2D_5psar")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_3kyeg")
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

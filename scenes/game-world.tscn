@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqjyvyxvar2k"]
+
+[ext_resource type="PackedScene" uid="uid://cjwq4ey8u4hld" path="res://scenes/cover.tscn" id="1_351gv"]
+[ext_resource type="Script" path="res://scenes/game_world.gd" id="1_qfest"]
+[ext_resource type="PackedScene" uid="uid://dn7uc3lsmgtjo" path="res://scenes/player.tscn" id="2_40m2a"]
+[ext_resource type="PackedScene" uid="uid://tsw4o8q85mc2" path="res://scenes/enemy.tscn" id="3_n0bqf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_iridc"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_qfest")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0.513726, 0.168627, 1)
+position = Vector2(628, 328)
+scale = Vector2(4908, 2876)
+mesh = SubResource("QuadMesh_iridc")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(83, -75)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(-6, 511)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(442, 933)
+
+[node name="StaticBody2D8" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(792, 614)
+
+[node name="StaticBody2D9" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(1610, 460)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(1089, 70)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(654, -353)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(1151, 487)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_351gv")]
+position = Vector2(381, 249)
+
+[node name="Player" parent="." instance=ExtResource("2_40m2a")]
+position = Vector2(585, 325)
+
+[node name="Enemy" parent="." instance=ExtResource("3_n0bqf")]
+position = Vector2(809, 302)
+
+[node name="MainCamera" type="Camera2D" parent="."]

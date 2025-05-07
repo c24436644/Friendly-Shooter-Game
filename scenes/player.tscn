@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn7uc3lsmgtjo"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_vuicq"]
+[ext_resource type="Texture2D" uid="uid://ec60pcejqida" path="res://kenney_top-down-shooter/PNG/Soldier 1/soldier1_stand.png" id="2_wqj0f"]
+[ext_resource type="Texture2D" uid="uid://r5aketiswivh" path="res://kenney_top-down-shooter/PNG/weapon_gun.png" id="3_ayy02"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74dwx"]
+radius = 14.0
+height = 42.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbffe"]
+radius = 13.3333
+height = 38.6667
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 17
+script = ExtResource("1_vuicq")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_wqj0f")
+
+[node name="Gun" type="Sprite2D" parent="Body"]
+position = Vector2(13, 15)
+texture = ExtResource("3_ayy02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_74dwx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.15
+drag_top_margin = 0.15
+drag_right_margin = 0.15
+drag_bottom_margin = 0.15
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-1.33333, 0)
+shape = SubResource("CapsuleShape2D_cbffe")
+
+[node name="CameraRemoteTransform" type="RemoteTransform2D" parent="."]
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
