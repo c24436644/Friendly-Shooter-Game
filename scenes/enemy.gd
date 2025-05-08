@@ -1,11 +1,16 @@
 extends CharacterBody2D
 class_name Enemy
 
+@onready var animplayer = $AnimationPlayer
+
+var player: Player = null
+
 var speed: float = 100.0
 var direction:= Vector2.ZERO
 var stop_distance = 20.0
 
-var player: Player = null
+var hit_points: int = 3
+
 
 func _process(delta: float) -> void:
 	if player != null:
@@ -42,3 +47,12 @@ func _on_player_detector_body_exited(body: Node2D) -> void:
 		if player != null:
 			player = null
 			print(name + "lost player")
+
+
+func _take_damage(amount: int):
+	if amount > 0:
+		hit_points -= amount
+		animplayer.play("take_damage")
+		if hit_points <= 0:
+			print("enemy down")
+			queue_free()
