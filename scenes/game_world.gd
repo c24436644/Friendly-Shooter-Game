@@ -9,5 +9,5 @@ func _ready() -> void:
 
 func _on_player_died():
 	print("game over")
-	get_tree().create_timer(2).timeout.connect(get_tree().reload_current_scene)
+	
 	

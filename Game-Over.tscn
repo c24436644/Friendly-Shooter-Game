@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp18t6eu2myrt"]
+[gd_scene load_steps=7 format=3 uid="uid://dp18t6eu2myrt"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_k7tqo"]
 [ext_resource type="Texture2D" uid="uid://c560vrj01o3gk" path="res://assets/Screenshot (20).png" id="2_arxyo"]
+[ext_resource type="AudioStream" uid="uid://c2wpoftjsdpib" path="res://kenney_foliage-pack/PNG/Default size/wah-wah-sad-trombone-6347.mp3" id="3_yn762"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qnl44"]
 texture = ExtResource("2_arxyo")
@@ -83,6 +84,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 100
 text = "Game Over
 "
+
+[node name="Wah-wah-sad-trombone-6347" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yn762")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Try Again" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Give Up" to="." method="_on_give_up_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7k302mjp6i1l"
+path="res://.godot/imported/zombie-death-2-95167.mp3-57872502bb448a41544beb93f6daabc0.mp3str"
+
+[deps]
+
+source_file="res://kenney_foliage-pack/PNG/Default size/zombie-death-2-95167.mp3"
+dest_files=["res://.godot/imported/zombie-death-2-95167.mp3-57872502bb448a41544beb93f6daabc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbt10v85kxunk"
+path="res://.godot/imported/funny-kids-cartoon-background-music-333104.mp3-18f7dfe30b226ef148ee6b84da3c4f0c.mp3str"
+
+[deps]
+
+source_file="res://kenney_foliage-pack/PNG/Default size/funny-kids-cartoon-background-music-333104.mp3"
+dest_files=["res://.godot/imported/funny-kids-cartoon-background-music-333104.mp3-18f7dfe30b226ef148ee6b84da3c4f0c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

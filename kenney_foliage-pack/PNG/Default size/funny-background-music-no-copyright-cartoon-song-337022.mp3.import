@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0qix68tmqr3b"
+path="res://.godot/imported/funny-background-music-no-copyright-cartoon-song-337022.mp3-28bc9588507a314b293b2f8e3ac43215.mp3str"
+
+[deps]
+
+source_file="res://kenney_foliage-pack/PNG/Default size/funny-background-music-no-copyright-cartoon-song-337022.mp3"
+dest_files=["res://.godot/imported/funny-background-music-no-copyright-cartoon-song-337022.mp3-28bc9588507a314b293b2f8e3ac43215.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

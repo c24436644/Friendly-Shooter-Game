@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddd28teeh4kuu"
+path="res://.godot/imported/man-death-scream-186763.mp3-c036f6324ff8e6f65b1c5edc139e3b4d.mp3str"
+
+[deps]
+
+source_file="res://kenney_foliage-pack/PNG/Default size/man-death-scream-186763.mp3"
+dest_files=["res://.godot/imported/man-death-scream-186763.mp3-c036f6324ff8e6f65b1c5edc139e3b4d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

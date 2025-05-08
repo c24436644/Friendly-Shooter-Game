@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://tsw4o8q85mc2"]
+[gd_scene load_steps=10 format=3 uid="uid://tsw4o8q85mc2"]
 
 [ext_resource type="Script" path="res://scenes/enemy.gd" id="1_onb6i"]
 [ext_resource type="Texture2D" uid="uid://8bg3obgro5wm" path="res://kenney_top-down-shooter/PNG/Zombie 1/zoimbie1_hold.png" id="1_wybgo"]
+[ext_resource type="AudioStream" uid="uid://cb3eitm7emf3k" path="res://kenney_foliage-pack/PNG/Default size/zombie-bite-96528.mp3" id="3_pmsh4"]
+[ext_resource type="AudioStream" uid="uid://c7k302mjp6i1l" path="res://kenney_foliage-pack/PNG/Default size/zombie-death-2-95167.mp3" id="4_bbyi8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5psar"]
 radius = 26.0
@@ -73,6 +75,20 @@ shape = SubResource("CircleShape2D_3kyeg")
 libraries = {
 "": SubResource("AnimationLibrary_68giu")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pmsh4")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_bbyi8")
+
+[node name="Zombie-bite-96528" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_pmsh4")
+volume_db = -2.811
+pitch_scale = 1.29
+
+[node name="Zombie-death-2-95167" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bbyi8")
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

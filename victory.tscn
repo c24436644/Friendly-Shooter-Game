@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvuqj8f2svnyb"]
+[gd_scene load_steps=6 format=3 uid="uid://cvuqj8f2svnyb"]
 
 [ext_resource type="Script" path="res://victory.gd" id="1_f5wqj"]
 [ext_resource type="Texture2D" uid="uid://c560vrj01o3gk" path="res://assets/Screenshot (20).png" id="2_nttle"]
+[ext_resource type="AudioStream" uid="uid://ccy7u8ih6k2t4" path="res://kenney_foliage-pack/PNG/Default size/goodresult-82807.mp3" id="3_nev1b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4dpu"]
 texture = ExtResource("2_nttle")
@@ -67,5 +68,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ta3c")
 text = "Main Menu"
+
+[node name="Goodresult-82807" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nev1b")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

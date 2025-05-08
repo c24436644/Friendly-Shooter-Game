@@ -58,6 +58,5 @@ func _take_damage(amount: int):
 		animplayer.play("take_damage")
 		if hit_points <= 0:
 			Global.score += 1 
-			var instance = mynode.instantiate()
-			add_child(instance)
+			$"Zombie-death-2-95167".play()
 			queue_free()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1b56dyxglkyq"
+path="res://.godot/imported/gun-shot-6178.mp3-8d39f5fa9797a534526431d8092c0b16.mp3str"
+
+[deps]
+
+source_file="res://kenney_foliage-pack/PNG/Default size/gun-shot-6178.mp3"
+dest_files=["res://.godot/imported/gun-shot-6178.mp3-8d39f5fa9797a534526431d8092c0b16.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

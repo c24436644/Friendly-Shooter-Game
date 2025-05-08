@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 	
 	if Input.is_action_just_pressed("shoot"):
+		$Body/Gun/AudioStreamPlayer2D.play()
 		if shoot_raycast.is_colliding():
 			var collider = shoot_raycast.get_collider() 
 
@@ -42,6 +43,5 @@ func _physics_process(delta: float) -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		died.emit()
-		
 		get_tree().change_scene_to_file("res://Game-Over.tscn")
 		queue_free()

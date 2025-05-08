@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxpyuo5v44blb"]
+[gd_scene load_steps=6 format=3 uid="uid://cxpyuo5v44blb"]
 
 [ext_resource type="Script" path="res://HowToPlay.gd" id="1_dimxq"]
 [ext_resource type="Texture2D" uid="uid://c560vrj01o3gk" path="res://assets/Screenshot (20).png" id="2_vut8r"]
+[ext_resource type="AudioStream" uid="uid://0qix68tmqr3b" path="res://kenney_foliage-pack/PNG/Default size/funny-background-music-no-copyright-cartoon-song-337022.mp3" id="3_r2byg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vf7k0"]
 texture = ExtResource("2_vut8r")
@@ -84,5 +85,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_r7if2")
 text = "Understood"
+
+[node name="Funny-background-music-no-copyright-cartoon-song-337022" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r2byg")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Ok" to="." method="_on_ok_pressed"]
