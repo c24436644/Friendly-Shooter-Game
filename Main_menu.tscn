@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdjl4wm0et763"]
+[gd_scene load_steps=6 format=3 uid="uid://cdjl4wm0et763"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_p80mg"]
 [ext_resource type="Texture2D" uid="uid://c560vrj01o3gk" path="res://assets/Screenshot (20).png" id="2_t5vcm"]
@@ -6,6 +6,20 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdbke"]
 texture = ExtResource("2_t5vcm")
 modulate_color = Color(0.548963, 0.548963, 0.548963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qhs5"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn2oh"]
+bg_color = Color(0.180005, 0.180005, 0.180005, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -33,9 +47,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -133.0
-offset_top = -199.0
+offset_top = -262.0
 offset_right = 133.0
-offset_bottom = -133.0
+offset_bottom = -158.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -46,11 +60,13 @@ theme_override_constants/separation = 20
 [node name="Start-Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2qhs5")
 text = "Start Game"
 
 [node name="Quit Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_cn2oh")
 text = "Quit Game"
 
 [node name="Label" type="Label" parent="."]
@@ -58,10 +74,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -304.0
-offset_top = 113.0
-offset_right = 304.0
-offset_bottom = 234.0
+offset_left = -392.0
+offset_top = 153.0
+offset_right = 402.0
+offset_bottom = 290.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 100
 text = "Garden Zombies"

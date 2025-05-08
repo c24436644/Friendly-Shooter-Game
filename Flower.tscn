@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cng5p7y7wsf8b"]
+
+[ext_resource type="Texture2D" uid="uid://n2x3ngtwbl1j" path="res://kenney_foliage-pack/PNG/Default size/foliagePack_062.png" id="1_nc73a"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(581, 347)
+texture = ExtResource("1_nc73a")

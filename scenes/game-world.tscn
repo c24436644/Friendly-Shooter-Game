@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqjyvyxvar2k"]
+[gd_scene load_steps=10 format=3 uid="uid://dqjyvyxvar2k"]
 
 [ext_resource type="PackedScene" uid="uid://cjwq4ey8u4hld" path="res://scenes/cover.tscn" id="1_351gv"]
 [ext_resource type="Script" path="res://scenes/game_world.gd" id="1_qfest"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tsw4o8q85mc2" path="res://scenes/enemy.tscn" id="3_n0bqf"]
 [ext_resource type="PackedScene" uid="uid://b2w06ey56jsis" path="res://spawner.tscn" id="5_0te6s"]
 [ext_resource type="Texture2D" uid="uid://dluebgu1cgpoj" path="res://kenney_top-down-shooter/PNG/Tiles/tile_17.png" id="6_yrwdf"]
+[ext_resource type="Script" path="res://scenes/Score.gd" id="7_w7p6y"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_iridc"]
 
@@ -163,3 +164,13 @@ shape = SubResource("RectangleShape2D_m1vqj")
 position = Vector2(120.642, 0)
 scale = Vector2(7.4458, 77.7038)
 texture = ExtResource("6_yrwdf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 68.0
+offset_right = 242.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "Score: 00"
+script = ExtResource("7_w7p6y")

@@ -3,11 +3,14 @@ class_name Enemy
 
 @onready var animplayer = $AnimationPlayer
 
+var mynode = preload("res://Flower.tscn")
+
 var player: Player = null
 
 var speed: float = 100.0
 var direction:= Vector2.ZERO
 var stop_distance = 20.0
+var threshold = 1
 
 var hit_points: int = 3
 
@@ -54,5 +57,7 @@ func _take_damage(amount: int):
 		hit_points -= amount
 		animplayer.play("take_damage")
 		if hit_points <= 0:
-			print("enemy down")
+			Global.score += 1 
+			var instance = mynode.instantiate()
+			add_child(instance)
 			queue_free()
