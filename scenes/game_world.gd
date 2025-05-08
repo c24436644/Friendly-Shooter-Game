@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	player.died.connect(_on_player_died)
 	player.camera_remote_transfrom.remote_path = main_camera.get_path()
+	
 
 func _on_player_died():
 	print("game over")
