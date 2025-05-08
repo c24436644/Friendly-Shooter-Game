@@ -1,27 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdjl4wm0et763"]
+[gd_scene load_steps=4 format=3 uid="uid://cdjl4wm0et763"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_lxwy7"]
+[ext_resource type="Script" path="res://menu.gd" id="1_p80mg"]
 [ext_resource type="Texture2D" uid="uid://c560vrj01o3gk" path="res://assets/Screenshot (20).png" id="2_t5vcm"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1pmo"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mdbke"]
 texture = ExtResource("2_t5vcm")
-modulate_color = Color(0.621524, 0.621524, 0.621524, 1)
+modulate_color = Color(0.548963, 0.548963, 0.548963, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e406s"]
-bg_color = Color(0, 0.577052, 0.377632, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lxwy7")
+script = ExtResource("1_p80mg")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -30,39 +23,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_x1pmo")
+theme_override_styles/panel = SubResource("StyleBoxTexture_mdbke")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -290.0
-offset_right = 140.0
-offset_bottom = -116.0
+offset_left = -133.0
+offset_top = -199.0
+offset_right = 133.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start-Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_e406s")
+theme_override_font_sizes/font_size = 30
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Quit Game" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_e406s")
+theme_override_font_sizes/font_size = 30
 text = "Quit Game"
 
 [node name="Label" type="Label" parent="."]
@@ -70,14 +58,13 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -397.0
-offset_top = 112.0
-offset_right = 397.0
-offset_bottom = 249.0
+offset_left = -304.0
+offset_top = 113.0
+offset_right = 304.0
+offset_bottom = 234.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.584764, 0.851742, 1, 1)
 theme_override_font_sizes/font_size = 100
 text = "Garden Zombies"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start-Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit Game" to="." method="_on_quit_game_pressed"]
